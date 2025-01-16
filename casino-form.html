@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Casino Card Game Form</title>
+  <!-- Link to the external CSS file -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="casino-form-body">
+  <form id="casino-form" action="submit-form.php" method="post">
+    <h2>Casino Game Form</h2>
+    
+    <label for="name">Name:</label>
+    <input 
+      type="text" 
+      id="name" 
+      name="name" 
+      placeholder="Enter your name" 
+      required
+    />
+    
+    <label for="email">Email:</label>
+    <input 
+      type="email" 
+      id="email" 
+      name="email" 
+      placeholder="Enter your email" 
+      required
+    />
+    
+    <label for="message">Message:</label>
+    <textarea 
+      id="message" 
+      name="message" 
+      rows="4" 
+      cols="30" 
+      placeholder="Enter your message"
+    ></textarea>
+    
+    <div class="checkbox-container">
+      <input 
+        type="checkbox" 
+        id="age-check" 
+        name="age-check"
+      />
+      <label for="age-check">I am 18 years old</label>
+    </div>
+    
+    <div class="warning" id="age-warning">
+      You must confirm you are 18 years old to submit.
+    </div>
+    
+    <button type="button" onclick="validateForm()">Submit</button>
+  </form>
+
+  <script>
+  
+  function validateForm() {
+    const ageCheck = document.getElementById('age-check');
+    const warning = document.getElementById('age-warning');
+
+    if (!ageCheck.checked) {
+      warning.style.display = 'block';
+    } else {
+      warning.style.display = 'none';
+      // Instead of submitting to PHP, go to landing.html:
+      window.location.href = 'landing.html';
+    }
+  }
+</script>
+
+
+</body>
+</html>
