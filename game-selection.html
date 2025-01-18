@@ -9,7 +9,7 @@
   <!-- Cover / Banner Image -->
   <div class="cover"></div>
 
-  <!-- Middle Section: Two or Three Game Options -->
+  <!-- Middle Section: Two Game Options -->
   <div class="game-section">
     <div class="game-card">
       <img src="game1.jpg" alt="Game 1" />
@@ -18,11 +18,6 @@
     <div class="game-card">
       <img src="game2.jpg" alt="Game 2" />
       <button id="game2-btn">Play Game 2</button>
-    </div>
-    <!-- Option: Link to the Casino Form -->
-    <div class="game-card">
-      <img src="form-icon.jpg" alt="Form" />
-      <button id="casino-form-btn">Casino Form</button>
     </div>
   </div>
 
@@ -42,14 +37,9 @@
       window.location.href = 'game1.html'; 
     });
 
-    // Now linking Game 2 button to the spin wheel page:
+    // Linking Game 2 button to the spin wheel page:
     document.getElementById('game2-btn').addEventListener('click', function() {
       window.location.href = 'spin-wheel.html'; 
-    });
-
-    // Redirect to the casino form
-    document.getElementById('casino-form-btn').addEventListener('click', function() {
-      window.location.href = 'casino-form.html';
     });
   </script>
 </body>
