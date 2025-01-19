@@ -11,6 +11,11 @@
   <form id="casino-form" action="submit-form.php" method="post">
     <h2>Casino Game Form</h2>
 
+    <!-- General Warning -->
+    <div class="warning" id="general-warning" style="display: none; margin-bottom: 15px;">
+      One or more fields are missing. Please fill in all fields and confirm you are 18 years old.
+    </div>
+
     <!-- Name Input -->
     <label for="name-input">Name:</label>
     <input 
@@ -21,7 +26,7 @@
       required
     />
     <div class="warning" id="name-warning" style="display: none;">
-      You must enter your name to submit.
+      You must enter your name.
     </div>
 
     <!-- Email Input -->
@@ -34,7 +39,7 @@
       required
     />
     <div class="warning" id="email-warning" style="display: none;">
-      You must enter your email to submit.
+      You must enter a valid email.
     </div>
 
     <!-- Message Input -->
@@ -46,6 +51,9 @@
       cols="30" 
       placeholder="Enter your message"
     ></textarea>
+    <div class="warning" id="message-warning" style="display: none;">
+      You must enter a message.
+    </div>
 
     <!-- Age Confirmation -->
     <div class="checkbox-container">
@@ -57,7 +65,7 @@
       <label for="age-check">I am 18 years old</label>
     </div>
     <div class="warning" id="age-warning" style="display: none;">
-      You must confirm you are 18 years old to submit.
+      You must confirm you are 18 years old.
     </div>
 
     <!-- Submit Button -->
@@ -66,35 +74,58 @@
 
   <script>
     function validateForm() {
+      // Get all form elements
       const name = document.getElementById('name-input').value.trim();
       const email = document.getElementById('email-input').value.trim();
+      const message = document.getElementById('message').value.trim();
       const ageCheck = document.getElementById('age-check');
+
+      // Get all warning elements
+      const generalWarning = document.getElementById('general-warning');
       const nameWarning = document.getElementById('name-warning');
       const emailWarning = document.getElementById('email-warning');
+      const messageWarning = document.getElementById('message-warning');
       const ageWarning = document.getElementById('age-warning');
 
       // Hide all warnings initially
+      generalWarning.style.display = 'none';
       nameWarning.style.display = 'none';
       emailWarning.style.display = 'none';
+      messageWarning.style.display = 'none';
       ageWarning.style.display = 'none';
 
-      // Check if name is provided
+      // Validation flags
+      let isValid = true;
+
+      // Validate name
       if (!name) {
         nameWarning.style.display = 'block';
-        return;
+        isValid = false;
       }
 
-      // Check if email is provided
+      // Validate email
       if (!email) {
         emailWarning.style.display = 'block';
-        return;
+        isValid = false;
       }
 
-      // Check if age checkbox is checked
+      // Validate message
+      if (!message) {
+        messageWarning.style.display = 'block';
+        isValid = false;
+      }
+
+      // Validate age checkbox
       if (!ageCheck.checked) {
         ageWarning.style.display = 'block';
+        isValid = false;
+      }
+
+      // If any field is invalid, show the general warning
+      if (!isValid) {
+        generalWarning.style.display = 'block';
       } else {
-        // Redirect to game selection page
+        // Redirect to game-selection.html if all fields are valid
         window.location.href = 'game-selection.html';
       }
     }
