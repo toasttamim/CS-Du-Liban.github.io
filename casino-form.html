@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Casino Card Game Form</title>
   <!-- Link to the external CSS file -->
   <link rel="stylesheet" href="style.css" />
@@ -9,25 +10,34 @@
 <body class="casino-form-body">
   <form id="casino-form" action="submit-form.php" method="post">
     <h2>Casino Game Form</h2>
-    
-    <label for="name">Name:</label>
+
+    <!-- Name Input -->
+    <label for="name-input">Name:</label>
     <input 
       type="text" 
-      id="name" 
+      id="name-input" 
       name="name" 
       placeholder="Enter your name" 
       required
     />
-    
-    <label for="email">Email:</label>
+    <div class="warning" id="name-warning" style="display: none;">
+      You must enter your name to submit.
+    </div>
+
+    <!-- Email Input -->
+    <label for="email-input">Email:</label>
     <input 
       type="email" 
-      id="email" 
+      id="email-input" 
       name="email" 
       placeholder="Enter your email" 
       required
     />
-    
+    <div class="warning" id="email-warning" style="display: none;">
+      You must enter your email to submit.
+    </div>
+
+    <!-- Message Input -->
     <label for="message">Message:</label>
     <textarea 
       id="message" 
@@ -36,7 +46,8 @@
       cols="30" 
       placeholder="Enter your message"
     ></textarea>
-    
+
+    <!-- Age Confirmation -->
     <div class="checkbox-container">
       <input 
         type="checkbox" 
@@ -45,30 +56,48 @@
       />
       <label for="age-check">I am 18 years old</label>
     </div>
-    
-    <div class="warning" id="age-warning">
+    <div class="warning" id="age-warning" style="display: none;">
       You must confirm you are 18 years old to submit.
     </div>
-    
+
+    <!-- Submit Button -->
     <button type="button" onclick="validateForm()">Submit</button>
   </form>
 
   <script>
-  
-  function validateForm() {
-    const ageCheck = document.getElementById('age-check');
-    const warning = document.getElementById('age-warning');
+    function validateForm() {
+      const name = document.getElementById('name-input').value.trim();
+      const email = document.getElementById('email-input').value.trim();
+      const ageCheck = document.getElementById('age-check');
+      const nameWarning = document.getElementById('name-warning');
+      const emailWarning = document.getElementById('email-warning');
+      const ageWarning = document.getElementById('age-warning');
 
-    if (!ageCheck.checked) {
-      warning.style.display = 'block';
-    } else {
-      warning.style.display = 'none';
-      // Instead of submitting to PHP, go to landing.html:
-      window.location.href = 'game-selection.html';
+      // Hide all warnings initially
+      nameWarning.style.display = 'none';
+      emailWarning.style.display = 'none';
+      ageWarning.style.display = 'none';
+
+      // Check if name is provided
+      if (!name) {
+        nameWarning.style.display = 'block';
+        return;
+      }
+
+      // Check if email is provided
+      if (!email) {
+        emailWarning.style.display = 'block';
+        return;
+      }
+
+      // Check if age checkbox is checked
+      if (!ageCheck.checked) {
+        ageWarning.style.display = 'block';
+      } else {
+        // Redirect to game selection page
+        window.location.href = 'game-selection.html';
+      }
     }
-  }
-</script>
-
-
+  </script>
 </body>
 </html>
