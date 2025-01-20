@@ -72,19 +72,19 @@
       // Get all form elements
       const name = document.getElementById('name-input').value.trim();
       const email = document.getElementById('email-input').value.trim();
-      const message = document.getElementById('message').value.trim();
+    
       const ageCheck = document.getElementById('age-check');
 
       // Get all warning elements
       const nameWarning = document.getElementById('name-warning');
       const emailWarning = document.getElementById('email-warning');
-      const messageWarning = document.getElementById('message-warning');
+   
       const ageWarning = document.getElementById('age-warning');
 
       // Hide all warnings initially
       nameWarning.style.display = 'none';
       emailWarning.style.display = 'none';
-      messageWarning.style.display = 'none';
+ 
       ageWarning.style.display = 'none';
 
       // Validation flags
@@ -101,10 +101,6 @@
         isValid = false;
       }
 
-      if (!message) {
-        messageWarning.style.display = 'block';
-        isValid = false;
-      }
 
       if (!ageCheck.checked) {
         ageWarning.style.display = 'block';
