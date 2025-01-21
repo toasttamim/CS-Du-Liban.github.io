@@ -51,19 +51,20 @@
     
     /* The pointer (at the top center) */
     .pointer {
+      transform: translateX(-30%) rotate(180deg);
       position: absolute;
       top: -20px;
       left: 50%;
-      transform: translateX(-50%);
       width: 0;
       height: 0;
       border-left: 20px solid transparent;
       border-right: 20px solid transparent;
       border-bottom: 30px solid #ffffff;
       filter: drop-shadow(0 0 5px #fff);
+    
     }
     
-    /* Spin button */
+  
     button {
       background: linear-gradient(45deg, #ff005e, #ffbb33);
       border: none;
@@ -103,8 +104,7 @@
   <div id="result"></div>
 
   <script>
-    // Define your segments (clockwise) to match your conic gradient slices
-    // For 8 slices, each slice is 45deg in the background
+   // results of the spinning game
     const segments = [
       "Jackpot",
       "Lucky 7",
@@ -122,14 +122,13 @@
 
     // Track current rotation
     let currentRotation = 0;
-
+// JS fucntion to make the wheel spin in a random way
     spinButton.addEventListener("click", () => {
       // Generate a random rotation between 2-5 full spins plus an offset
       // total degrees = 360 * (full spins) + random offset 0-359
       const randomSpins = Math.floor(Math.random() * 3) + 2; 
       // offset to land on a specific slice
       const offset = Math.floor(Math.random() * 360);  
-
       // new rotation
       const newRotation = currentRotation + (randomSpins * 360) + offset;
 
