@@ -17,7 +17,7 @@ html, body {
 */
 body.landing {
   /* Replace with your desired landing background image if needed */
-  background: url('intro.jpg') no-repeat center center fixed;
+  background: url('images/intro.jpg') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
   position: relative;
