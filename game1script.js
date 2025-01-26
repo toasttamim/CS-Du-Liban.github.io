@@ -53,7 +53,7 @@ function revealCard(event) {
 
   // Show card content
   card.classList.add('revealed');
-  card.innerHTML = `<img src="${effect === 'damage' ? 'damage.png' : 'heal.png'}" alt="${effect}">`;
+  card.innerHTML = `<img src="${effect === 'damage' ? 'image/damage.gif' : 'image/heal.gif'}" alt="${effect}">`;
 
   // Update health
   if (effect === 'damage') {
