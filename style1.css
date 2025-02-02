@@ -112,17 +112,6 @@ h2 {
   position: relative;
 }
 
-/* GIF Display - Restored Proportions */
-.card img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 95%;
-  height: 95%;
-  object-fit: contain; /* Ensures GIF fits inside without distortion */
-  transform: translate(-50%, -50%);
-}
-
 /* Disable hover effect for revealed cards */
 .card:not(.revealed):hover {
   transform: scale(1.1);
@@ -156,8 +145,8 @@ h2 {
 .modal {
   display: none;
   position: fixed;
-  top: 50%;
-  left: 50%;
+  top: 100%;
+  left: 100%;
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.8);
   padding: 20px;
