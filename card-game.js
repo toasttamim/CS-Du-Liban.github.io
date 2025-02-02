@@ -37,12 +37,10 @@ function updatePicksCounter() {
 }
 
 // Generate random cards with effects
-//chatgpt generated
 function initializeCards() {
   cardValues = Array(3)
-  //create 3 cards
     .fill(null)
-    for(i=0;i<5;i++) {
+    .map(() => {
       const effect = Math.random() < 0.6 ? 'damage' : 'heal'; // Higher chance for damage
       const isCritical = effect === 'damage' && Math.random() < 0.2; // 20% chance for critical damage
       const value = isCritical
@@ -51,14 +49,13 @@ function initializeCards() {
         ? Math.floor(Math.random() * 20) + 15 // Regular damage: 15-35
         : Math.floor(Math.random() * 15) + 5; // Heal: 5-20
       return { effect, value };
-    };
+    });
 
   renderCards();
   updatePicksCounter();
 }
 
 // Render hidden cards
-//chatgpt generated
 function renderCards() {
   cardDeck.innerHTML = '';
   cardValues.forEach((_, index) => {
@@ -88,11 +85,12 @@ function revealCard(event) {
 
   // Update health
   if (effect === 'damage') {
-    health = health - value;
+    health -= value;
+    health = Math.max(0, health); // Ensure health doesn't go below 0
     const randomPhrase = damagePhrases[Math.floor(Math.random() * damagePhrases.length)];
     message.innerHTML += `<p>${randomPhrase} You lost ${value} health.</p>`;
   } else {
-    health = health + value;
+    health += value;
     health = Math.min(100, health); // Cap health at 100
     const randomPhrase = healPhrases[Math.floor(Math.random() * healPhrases.length)];
     message.innerHTML += `<p>${randomPhrase} You gained ${value} health.</p>`;
@@ -105,42 +103,58 @@ function revealCard(event) {
   nextButton.disabled = false;
 }
 
-// Update health bar display
+// Update health bar display dynamically
 function updateHealthBar() {
   healthBarFill.style.width = `${health}%`;
-  healthBarFill.style.background = `rgb(${255 - (health * 2.55)}, ${health * 2.55}, 0)`; // Dynamic color from green to red
+  healthBarFill.style.background = `linear-gradient(to right, rgb(${255 - health * 2.55}, ${health * 2.55}, 0), red)`; // Gradient from green to red
 }
 
-// Reset for the next pick
+// Prepare the next round
 function nextPick() {
-  // Add random health decay between picks
-  const healthDecay = Math.floor(Math.random() * 5) + 5; // Decay: 5-10
-  health = health - healthDecay;
-  message.innerHTML += `<p>You feel weaker... You lost ${healthDecay} health.</p>`;
-
   picks++;
-  if (picks === maxPicks || health <= 0) {
-    endGame();
+  if (picks === maxPicks || health === 0) {
+    endGame(); // End the game only if health is 0 or picks are finished
   } else {
     message.textContent = 'Pick another card!';
-    nextButton.disabled = true;
-    initializeCards();
+    nextButton.disabled = true; // Disable the Next button until the next card is picked
+    initializeCards(); // Reset cards for the next round
   }
 }
 
 // End the game
 function endGame() {
   cardDeck.innerHTML = '';
-  nextButton.style.display = 'none';
+  nextButton.style.display = 'none'; // Hide the Next button
 
-  if (health <= 0) {
-    message.textContent = '2alabet business major too bad :(';
+  // Display endgame message
+  if (health === 0) {
+    message.textContent = 'yi 2labet to a business major meshkeltak seret unemployed!';
   } else {
-    message.textContent = `Congratulations! Your final health is ${health}. You earned the title "employed".`;
+    message.textContent = `Congratulations! Your final health is ${health}. seret bteshteghil blebnen bel sokhra 🥳.`;
   }
-  picksCounter.style.display = 'none'; // Hide the picks counter after the game ends
+
+  picksCounter.style.display = 'none'; // Hide the picks counter
 }
 
-// Initialize game
+// Initialize the game
 nextButton.addEventListener('click', nextPick);
 initializeCards();
+// Function to navigate between pages
+function goToPage(page) {
+  window.location.href = page;
+}
+
+// Function to go back
+function goBack() {
+  window.history.back();
+}
+
+// Open settings modal
+function openSettings() {
+  document.getElementById("settings-modal").style.display = "block";
+}
+
+// Close settings modal
+function closeSettings() {
+  document.getElementById("settings-modal").style.display = "none";
+}
