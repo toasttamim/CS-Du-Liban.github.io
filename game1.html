@@ -3,14 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Card Game</title>
-  <link rel="preload" href="images/damage.gif" as="image">
-  <link rel="preload" href="images/heal.gif" as="image">
+  <title>Card Gamble Game</title>
   <link rel="stylesheet" href="style1.css">
-</head>
 <body>
   <div class="game-container">
-    <h2>Card Game</h2>
+    <h2>Card Gamble Game</h2>
 
     <!-- Health Bar -->
     <div class="health-container">
@@ -29,7 +26,19 @@
     <!-- Next Button -->
     <button id="next-button" class="next-button" disabled>Next</button>
   </div>
+  <div class="nav-buttons">
+    <button onclick="openSettings()">⚙ Settings</button>
+  </div>
+  <!-- Settings Modal -->
+  <div id="settings-modal" class="modal">
+    <div class="modal-content">
+      <h2>Settings</h2>
+      <button onclick="goToPage('game-selection.html')">🏠 Go to Lobby</button>
+      <button onclick="closeSettings()">❌ Close</button>
+    </div>
+  </div>
 
-  <script src="game1script.js"></script>
+
+  <script src="test.js"></script>
 </body>
 </html>
