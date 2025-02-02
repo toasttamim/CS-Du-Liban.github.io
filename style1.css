@@ -75,7 +75,7 @@ h2 {
   margin: 20px 0;
 }
 
-/* Card Style - Removed Border */
+/* Card Style */
 .card {
   width: 100px;
   height: 150px;
@@ -89,9 +89,19 @@ h2 {
   color: white;
   cursor: pointer;
   transition: transform 0.2s;
-  background-color: rgba(0, 0, 0, 0.2); /* Default card background */
+  background-color: rgba(0, 0, 0, 0.2);
   overflow: hidden;
   position: relative;
+}
+
+/* GIF Display - Restored Proportions */
+.card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures GIF fits inside without distortion */
 }
 
 /* Disable hover effect for revealed cards */
@@ -100,8 +110,8 @@ h2 {
 }
 
 .card.revealed {
-  pointer-events: none; /* Disable interaction with revealed cards */
-  transform: none;      /* Prevent accidental scaling */
+  pointer-events: none;
+  transform: none;
   background-color: transparent;
 }
 
