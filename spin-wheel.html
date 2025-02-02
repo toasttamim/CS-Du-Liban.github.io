@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>7azak Bel E5tisas Wheel</title>
-  <link rel="stylesheet" href="wheel.css" />
-  
+  <title>Spin & Win</title>
+  <link rel="stylesheet" href="spin-wheel.css">
 </head>
 <body>
 
-  <h1> Shuf 7azak Bel E5tisas Wheel!</h1>
+  <!-- Settings Button -->
+  <button class="settings-button" onclick="openSettings()">⚙ Settings</button>
+
+  <h1>Shuf 7azak Bel E5tisas Wheel!</h1>
 
   <!-- Wheel Container -->
   <div class="wheel-container">
@@ -19,9 +21,7 @@
   <button id="spin-btn">SPIN</button>
 
   <div id="result"></div>
-  <div class="nav-buttons">
-    <button onclick="openSettings()">⚙ Settings</button>
-  </div>
+
   <!-- Settings Modal -->
   <div id="settings-modal" class="modal">
     <div class="modal-content">
@@ -31,7 +31,6 @@
     </div>
   </div>
 
-  <script src="spin-wheel.js">
-  </script>
+  <script src="spin-wheel.js"></script>
 </body>
 </html>
