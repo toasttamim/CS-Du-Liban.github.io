@@ -9,6 +9,27 @@ body {
   background: radial-gradient(circle, #1e1e1e, #0c0c0c);
   font-family: Arial, sans-serif;
   color: white;
+  position: relative;
+}
+
+/* Settings Button */
+.settings-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(45deg, #007BFF, #0056b3);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(255, 100, 0, 0.5);
+  transition: background 0.3s ease;
+}
+
+.settings-button:hover {
+  background: linear-gradient(45deg, #0056b3, #007BFF);
 }
 
 .game-container {
@@ -105,11 +126,13 @@ h2 {
   height: 100%;
   object-fit: cover; /* Prevent distortion */
 }
+
+/* Modal for settings */
 .modal {
   display: none;
   position: fixed;
-  top: 100%;
-  left: 100%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.8);
   padding: 20px;
@@ -128,7 +151,7 @@ h2 {
   color: white;
   border: none;
   padding: 10px;
-  margin-top: 50px;
+  margin-top: 10px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -136,4 +159,3 @@ h2 {
 .modal button:hover {
   background: linear-gradient(45deg, #0056b3, #007BFF);
 }
-
