@@ -48,7 +48,7 @@ function validateSignUp() {
       localStorage.setItem('users', JSON.stringify(savedData));
       alert('Sign-Up Successful! You can now log in.');
       // Redirect to another page after successful sign-up
-      window.location.href = 'game-selection.html'; // Replace 'welcome.html' with the page you want to redirect to
+      window.location.href = 'game-selection.html'; 
     }
   }
 }
