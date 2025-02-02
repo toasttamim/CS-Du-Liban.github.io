@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 
-html, body {
+html, body { background: url('images/intro.jpg') no-repeat center center fixed;
   font-family: Arial, sans-serif;
   color: white;
 }
