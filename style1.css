@@ -76,46 +76,64 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #007BFF;
   font-size: 20px;
   font-weight: bold;
   color: white;
   cursor: pointer;
   transition: transform 0.2s;
+  background-color: rgba(0, 0, 0, 0.2); /* Default card background */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Disable hover effect for revealed cards */
+.card:not(.revealed):hover {
+  transform: scale(1.1); /* Only apply scaling to unrevealed cards */
 }
 
 .card.revealed {
-  background-color: white;
-  color: black;
+  pointer-events: none; /* Disable interaction with revealed cards */
+  transform: none;      /* Prevent accidental scaling */
+  background-color: transparent;
 }
 
 .card img {
-  width: 80%;
-  height: 80%;
-  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensure the image fills the card */
+  height: 100%;
+  object-fit: cover; /* Prevent distortion */
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 100%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  text-align: center;
+  width: 250px;
 }
 
-.card:hover {
-  transform: scale(1.1);
-}
-
-/* Next Button */
-.next-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border: none;
-  border-radius: 5px;
-  background-color: #007BFF;
+.modal-content {
   color: white;
-  transition: background-color 0.3s ease;
 }
 
-.next-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+.modal button {
+  background: linear-gradient(45deg, #007BFF, #0056b3);
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 50px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.next-button:hover:not(:disabled) {
-  background-color: #0056b3;
+.modal button:hover {
+  background: linear-gradient(45deg, #0056b3, #007BFF);
 }
+
