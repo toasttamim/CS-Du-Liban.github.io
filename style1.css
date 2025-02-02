@@ -20,7 +20,7 @@ body {
   background: linear-gradient(45deg, #ff005e, #ffbb33);
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 24px;
   font-size: 1.2em;
   border-radius: 5px;
   cursor: pointer;
@@ -42,9 +42,12 @@ body {
   text-align: center;
 }
 
+/* Title Style */
 h2 {
   margin-bottom: 20px;
-  color: #ffbb33;
+  background: linear-gradient(45deg, #ff005e, #ffbb33);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Gradient Next Button */
@@ -65,6 +68,43 @@ h2 {
   background: linear-gradient(45deg, #ffbb33, #ff005e);
 }
 
+/* Card Deck */
+.card-deck {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* Card Style - Removed Border */
+.card {
+  width: 100px;
+  height: 150px;
+  border-radius: 10px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s;
+  background-color: rgba(0, 0, 0, 0.2); /* Default card background */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Disable hover effect for revealed cards */
+.card:not(.revealed):hover {
+  transform: scale(1.1); /* Only apply scaling to unrevealed cards */
+}
+
+.card.revealed {
+  pointer-events: none; /* Disable interaction with revealed cards */
+  transform: none;      /* Prevent accidental scaling */
+  background-color: transparent;
+}
+
 /* Modal for settings */
 .modal {
   display: none;
@@ -78,4 +118,22 @@ h2 {
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
   text-align: center;
   width: 250px;
+}
+
+.modal-content {
+  color: white;
+}
+
+.modal button {
+  background: linear-gradient(45deg, #ff005e, #ffbb33);
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal button:hover {
+  background: linear-gradient(45deg, #ffbb33, #ff005e);
 }
