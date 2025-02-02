@@ -1,4 +1,4 @@
-/* General Styles for Intro Page */
+/*will affect every html element*/
 * {
   margin: 0;
   padding: 0;
@@ -10,21 +10,24 @@ html, body {
   color: white;
 }
 
-/* Landing Page Styles */
+/* 
+style for the main page :shockers: who would know?
+*/
 body.landing {
-  background: url(image/intro.jpg) no-repeat center center fixed;
+  background: url(intro.jpg) no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
   position: relative;
 }
 
+/*  */
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5); 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,27 +35,88 @@ body.landing {
   text-align: center;
 }
 
+/* */
 .overlay h1 {
   font-size: 48px;
   margin-bottom: 40px;
 }
 
 .play-button {
-  font-size: 24px;
-  padding: 15px 40px;
+  font-size: 20px;
+  padding: 15px 35px;
   border: none;
-  border-radius: 10px;
-  background: linear-gradient(45deg, #ff005e, #ffbb33);
+  border-radius: 6px;
+  background-color: #ef4836;
   color: #fff;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s;
+  transition: background-color 0.3s ease;
 }
 
 .play-button:hover {
-  background: linear-gradient(45deg, #ffbb33, #ff005e);
-  transform: scale(1.1);
+  background-color: #d62c1a;
 }
-.button {
+
+/* 
+for the game selection page :P
+*/
+body.game-selection {
+  background: #000; 
+  min-height: 100vh;
+}
+
+
+.cover {
+  background-size: cover;
+  height: 250px;
+  width: 100%;
+}
+
+.game-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.game-card {
+  text-align: center;
+  margin: 0 40px;
+}
+
+.game-card img {
+  width: 200px;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+/*  */
+.game-card button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.game-card button:hover {
+  background-color: #0056b3;
+}
+
+/* information about us in the bottom of the page */
+.info-section {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: #fff;
+}
+button {
   background: linear-gradient(45deg, #ff005e, #ffbb33);
   color: white;
   border: none;
@@ -63,6 +127,6 @@ body.landing {
   box-shadow: 0 0 10px rgba(255, 100, 0, 0.5);
 }
 
-.button:hover {
-  background: linear-gradient(45deg, #ffbb33, #ff005e);
+button:hover {
+  background: linear-gradient(45deg, #ffbb33, #ff005e);
 }
