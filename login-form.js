@@ -20,7 +20,7 @@ function validateLogin() {
     if (savedData[username] && savedData[username] === password) {
       alert('Login Successful!');
       // Redirect to another page after successful login
-      window.location.href = 'game-selection.html'; // Replace 'dashboard.html' with the page you want to redirect to
+      window.location.href = 'game-selection.html'; 
     } else {
       alert('Invalid username or password.');
     }
