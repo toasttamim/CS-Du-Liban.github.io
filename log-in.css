@@ -1,0 +1,112 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle, #320042, #0e001b); /* Matches the color tone of the image */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Container */
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+  text-align: center;
+  width: 400px; /* Adjusted for better proportions */
+  max-width: 90%; /* Responsive design for smaller screens */
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 25px;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px; /* Larger font for readability */
+  cursor: pointer;
+  padding: 12px;
+  width: 50%;
+}
+
+.tab-button.active {
+  border-bottom: 3px solid white;
+}
+
+/* Form Container */
+.form-container {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 25px;
+  border-radius: 10px;
+}
+
+/* Form Fields */
+input[type="text"], input[type="email"], input[type="password"] {
+  width: 90%;
+  padding: 12px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 16px; /* Increased size for better visibility */
+}
+
+input::placeholder {
+  color: #ddd;
+}
+
+/* Checkbox */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 20px;
+}
+
+input[type="checkbox"] {
+  margin-right: 12px;
+  transform: scale(1.2);
+}
+
+/* Buttons */
+button {
+  background: linear-gradient(45deg, #ff005e, #ffbb33);
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #ffbb33, #ff005e);
+}
+
+/* Hide Warnings */
+.warning {
+  color: red;
+  font-size: 0.9rem;
+  display: none;
+}
+
+/* Hide Tabs Initially */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
