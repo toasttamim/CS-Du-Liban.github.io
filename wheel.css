@@ -9,43 +9,59 @@ body {
     justify-content: center;
     height: 100vh;
     color: #fff;
-  }
-  h1 {
+    position: relative;
+}
+
+/* Settings Button */
+.settings-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(45deg, #007BFF, #0056b3);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(255, 100, 0, 0.5);
+    transition: background 0.3s ease;
+}
+
+.settings-button:hover {
+    background: linear-gradient(45deg, #0056b3, #007BFF);
+}
+
+/* Heading */
+h1 {
     margin-bottom: 20px;
-  }
-  
-  /* Wheel container */
-  .wheel-container {
+}
+
+/* Wheel container */
+.wheel-container {
     position: relative;
     width: 300px;
     height: 300px;
     margin-bottom: 20px;
-  }
-  
-  /* The wheel itself */
-  .wheel {
+}
+
+/* The wheel itself */
+.wheel {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 8px solid #ffd700; /* gold-ish border */
+    border: 8px solid #ffd700;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-    /* Conic gradient for 8 segments (45 deg each) - adjust to your preference */
     background: conic-gradient(
-      #6f42c1 0deg 45deg,      /* Rich Purple */
-  #8e44ad 45deg 90deg,     /* Deep Violet */
-  #3498db 90deg 135deg,    /* Light Blue */
- #ff5733 135deg 180deg,   /* Vibrant Orange-Red */
-  #f39c12 180deg 225deg,   /* Golden Yellow */
-  #ffc107 225deg 270deg,   /* Bright Yellow */
-  #e83e8c 270deg 315deg,   /* Magenta Pink */
-  #9b59b6 315deg 360deg    /* Lavender Purple */
-     
+        #6f42c1 0deg 45deg, #8e44ad 45deg 90deg, #3498db 90deg 135deg,
+        #ff5733 135deg 180deg, #f39c12 180deg 225deg, #ffc107 225deg 270deg,
+        #e83e8c 270deg 315deg, #9b59b6 315deg 360deg
     );
     transition: transform 4s cubic-bezier(0.33, 1, 0.68, 1);
-  }
-  
-  /* The pointer (at the top center) */
-  .pointer {
+}
+
+/* The pointer (at the top center) */
+.pointer {
     transform: translateX(-30%) rotate(180deg);
     position: absolute;
     top: -20px;
@@ -56,11 +72,10 @@ body {
     border-right: 20px solid transparent;
     border-bottom: 30px solid #ffffff;
     filter: drop-shadow(0 0 5px #fff);
-  
-  }
-  
+}
 
-  button {
+/* Buttons */
+button {
     background: linear-gradient(45deg, #ff005e, #ffbb33);
     border: none;
     padding: 12px 24px;
@@ -70,19 +85,22 @@ body {
     cursor: pointer;
     box-shadow: 0 0 8px rgba(255, 100, 0, 0.5);
     transition: background 0.3s ease;
-  }
-  button:hover {
-    background: linear-gradient(45deg, #ffbb33, #ff005e);
-  }
+}
 
-  /* Result message */
-  #result {
+button:hover {
+    background: linear-gradient(45deg, #ffbb33, #ff005e);
+}
+
+/* Result message */
+#result {
     margin-top: 20px;
     font-size: 1.2rem;
     text-align: center;
     min-height: 1.5em;
-  }
-  .modal {
+}
+
+/* Modal for settings */
+.modal {
     display: none;
     position: fixed;
     top: 50%;
@@ -94,13 +112,13 @@ body {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
     text-align: center;
     width: 250px;
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     color: white;
-  }
-  
-  .modal button {
+}
+
+.modal button {
     background: linear-gradient(45deg, #007BFF, #0056b3);
     color: white;
     border: none;
@@ -108,9 +126,8 @@ body {
     margin-top: 10px;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .modal button:hover {
+}
+
+.modal button:hover {
     background: linear-gradient(45deg, #0056b3, #007BFF);
-  }
-  
+}
