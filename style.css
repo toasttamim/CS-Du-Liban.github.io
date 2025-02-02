@@ -1,6 +1,23 @@
+/* ===== Universal Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+/* 
+  -------------------------------------------------
+  LANDING PAGE STYLES
+  -------------------------------------------------
+*/
 body.landing {
   /* Replace with your desired landing background image if needed */
-  background: url('image/intro.jpg') no-repeat center center fixed;
+  background: url('casino_background.jpg') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
   position: relative;
@@ -40,4 +57,153 @@ body.landing {
 
 .play-button:hover {
   background-color: #d62c1a;
+}
+
+/* 
+  -------------------------------------------------
+  GAME SELECTION PAGE STYLES
+  -------------------------------------------------
+*/
+body.game-selection {
+  background: #000; /* or any desired background */
+  min-height: 100vh;
+}
+
+/* Cover / Banner at the top */
+.cover {
+  /* Replace 'cover.jpg' with your own image */
+  background: url('cover.jpg') no-repeat center center;
+  background-size: cover;
+  height: 300px;
+  width: 100%;
+}
+
+.game-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.game-card {
+  text-align: center;
+  margin: 0 20px;
+}
+
+.game-card img {
+  width: 200px;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Buttons for each game */
+.game-card button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.game-card button:hover {
+  background-color: #0056b3;
+}
+
+/* Additional info at the bottom */
+.info-section {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: #fff; /* ensure text is visible */
+}
+
+/* 
+  -------------------------------------------------
+  CASINO FORM PAGE STYLES
+  -------------------------------------------------
+*/
+body.casino-form-body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #2d005e, #0c001b);
+}
+
+/* The form container */
+form {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  text-align: center;
+  width: 350px;
+}
+
+/* Form labels */
+label {
+  display: block;
+  margin: 10px 0 5px;
+  font-size: 1.2em;
+}
+
+/* Inputs and textarea */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 15px;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1em;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #ccc;
+}
+
+/* Submit button */
+button {
+  background: linear-gradient(45deg, #ff005e, #ffbb33);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 100, 0, 0.5);
+}
+
+button:hover {
+  background: linear-gradient(45deg, #ffbb33, #ff005e);
+}
+
+/* Checkbox styling */
+.checkbox-container {
+  margin: 10px 0;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.5);
+}
+
+/* Warning message */
+.warning {
+  color: #ff5555;
+  font-size: 0.9em;
+  margin: 10px 0;
+  display: none; /* default hidden, toggled by JS */
 }
