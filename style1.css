@@ -20,7 +20,7 @@ body {
   background: linear-gradient(45deg, #ff005e, #ffbb33);
   color: white;
   border: none;
-  padding: 12px 24px;
+  padding: 10px 20px;
   font-size: 1.2em;
   border-radius: 5px;
   cursor: pointer;
@@ -42,7 +42,7 @@ body {
   text-align: center;
 }
 
-/* Title Style */
+/* Title Styling */
 h2 {
   margin-bottom: 20px;
   background: linear-gradient(45deg, #ff005e, #ffbb33);
@@ -50,22 +50,10 @@ h2 {
   -webkit-text-fill-color: transparent;
 }
 
-/* Gradient Next Button */
-.next-button {
-  background: linear-gradient(45deg, #ff005e, #ffbb33);
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  box-shadow: 0 0 8px rgba(255, 100, 0, 0.5);
-  transition: background 0.3s ease;
-  margin-top: 15px;
-}
-
-.next-button:hover {
-  background: linear-gradient(45deg, #ffbb33, #ff005e);
+/* Message */
+.message {
+  font-size: 18px;
+  margin: 20px 0;
 }
 
 /* Health Bar */
@@ -105,7 +93,7 @@ h2 {
   margin: 20px 0;
 }
 
-/* Card Style */
+/* Card Styling */
 .card {
   width: 100px;
   height: 150px;
@@ -127,22 +115,41 @@ h2 {
 /* GIF Display - Restored Proportions */
 .card img {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; /* Ensure the image fills the card */
-  height: 100%;
-  object-fit: cover; /* Prevent distortion */
+  top: 50%;
+  left: 50%;
+  width: 95%;
+  height: 95%;
+  object-fit: contain; /* Ensures GIF fits inside without distortion */
+  transform: translate(-50%, -50%);
 }
 
 /* Disable hover effect for revealed cards */
 .card:not(.revealed):hover {
-  transform: scale(1.1); /* Only apply scaling to unrevealed cards */
+  transform: scale(1.1);
 }
 
 .card.revealed {
   pointer-events: none;
   transform: none;
   background-color: transparent;
+}
+
+/* Gradient Next Button */
+.next-button {
+  background: linear-gradient(45deg, #ff005e, #ffbb33);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(255, 100, 0, 0.5);
+  transition: background 0.3s ease;
+  margin-top: 15px;
+}
+
+.next-button:hover {
+  background: linear-gradient(45deg, #ffbb33, #ff005e);
 }
 
 /* Modal for settings */
