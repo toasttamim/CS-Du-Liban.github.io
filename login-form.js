@@ -20,7 +20,7 @@ function validateLogin() {
     if (savedData[username] && savedData[username] === password) {
       alert('Login Successful!');
       // Redirect to another page after successful login
-      window.location.href = 'dashboard.html'; // Replace 'dashboard.html' with the page you want to redirect to
+      window.location.href = 'game-selection.html'; // Replace 'dashboard.html' with the page you want to redirect to
     } else {
       alert('Invalid username or password.');
     }
@@ -48,7 +48,7 @@ function validateSignUp() {
       localStorage.setItem('users', JSON.stringify(savedData));
       alert('Sign-Up Successful! You can now log in.');
       // Redirect to another page after successful sign-up
-      window.location.href = 'welcome.html'; // Replace 'welcome.html' with the page you want to redirect to
+      window.location.href = 'game-selection.html'; // Replace 'welcome.html' with the page you want to redirect to
     }
   }
 }
