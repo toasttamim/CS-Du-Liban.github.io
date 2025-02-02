@@ -14,7 +14,7 @@ html, body {
 style for the main page :shockers: who would know?
 */
 body.landing {
-  background: url(intro.jpg) no-repeat center center fixed;
+  background: url(image/intro.jpg) no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
   position: relative;
@@ -119,6 +119,6 @@ body.game-selection {
 
 /* 
   -------------------------------------------------
-  CASINO FORM PAGE STYLES
+                 FORM PAGE STYLES
   -------------------------------------------------
 */
