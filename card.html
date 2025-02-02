@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Card Game</title>
-  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="card-game.css">
+</head>
 <body>
+
+  <!-- Settings Button -->
   <button class="settings-button" onclick="openSettings()">⚙ Settings</button>
+
   <div class="game-container">
     <h2>Card Game</h2>
 
@@ -27,9 +30,7 @@
     <!-- Next Button -->
     <button id="next-button" class="next-button" disabled>Next</button>
   </div>
-  <div class="nav-buttons">
-    <button onclick="openSettings()">⚙ Settings</button>
-  </div>
+
   <!-- Settings Modal -->
   <div id="settings-modal" class="modal">
     <div class="modal-content">
@@ -38,7 +39,6 @@
       <button onclick="closeSettings()">❌ Close</button>
     </div>
   </div>
-
 
   <script src="card-game.js"></script>
 </body>
