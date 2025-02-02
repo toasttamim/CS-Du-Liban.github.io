@@ -81,7 +81,7 @@ function revealCard(event) {
 
   // Show card content
   card.classList.add('revealed');
-  card.innerHTML = `<img src="${effect === 'damage' ? 'lava.gif' : 'heal.gif'}" alt="${effect}">`;
+  card.innerHTML = `<img src="${effect === 'damage' ? 'image/lava.gif' : 'image/heal.gif'}" alt="${effect}">`;
 
   // Update health
   if (effect === 'damage') {
