@@ -1,6 +1,6 @@
 body.landing {
   /* Replace with your desired landing background image if needed */
-  background: url('casino_background.jpg') no-repeat center center fixed;
+  background: url('image/intro.jpg') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
   position: relative;
